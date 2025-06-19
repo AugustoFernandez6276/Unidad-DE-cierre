@@ -1,24 +1,101 @@
-# Compiled class file
-*.class
+import java.util.Scanner;
 
-# Log file
-*.log
+public class Menu {
 
-# BlueJ files
-*.ctxt
+    String obtenerMenu(String dia) {
+        switch (dia) {
+            case "lunes":
+                return "practico 2.1 tiene estos ejercicios: Clase Persona, Clase Dado, Clase Semaforo, Clase Propina, Clase MenuDelDia, Clase ParImpar";
+            default:
+                return "saliste del menu";
+        }
+    }
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+    public static void main(String[] args) {
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+        Scanner scanner = new Scanner(System.in);
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+        System.out.print("Elige entre 1,2 o 3 para elegir un practico. o elige 4 para salir ");
+        int numero = scanner.nextInt();
+
+              if (numero == 1) {
+            System.out.println("Elegiste practico 2.1: " + numero);
+            Menu m = new Menu();
+           
+            System.out.println(m.obtenerMenu("lunes"));
+        } else if (numero == 2) {
+            System.out.println("Elegiste practico 2.2: " + numero);
+            Menu2 m2 = new Menu2();
+           
+            System.out.println(m2.obtenerMenu("2"));
+            System.out.println(m2.obtenerMenu("lunes"));
+        } else if (numero == 3) {
+              System.out.println("Elegiste practico 3: JerarquiadeAnimales, FigurasGeometricas, SistemadeEmpleados, VehiculosElectricos, GestordePagos, Bibliotecadigital, AnimalesdelZoologico " + numero);
+              Menu3 m = new Menu3(); 
+        } else {
+            System.out.println("saliste del menu");
+        }
+
+        scanner.close();
+        
+            
+    }
+}
+
+class Menu1 {
+
+}
+
+class Menu2 {
+
+    String obtenerMenu(String dia) {
+        switch (dia) {
+            case "2":
+                return "practico 2.2 tiene estos ejercicios:ConversordeTemperatura, PlanificadordeCosecha, CazandoFantasmas, ContrasenaSegura, SimuladordeEnergia, VerificaciondeRango";
+            default:
+                return "";
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Que practico elegir ");
+        int numero = scanner.nextInt();
+        System.out.println("Elegiste practico 2.2: " + numero);
+
+        Menu2 m = new Menu2();
+
+        System.out.println(m.obtenerMenu("2"));
+
+        scanner.close();
+    }
+}
+
+class Menu3 {
+
+    String obtenerMenu(String dia) {
+        switch (dia) {
+            case "3":
+                return "practico 2.2 tiene estos ejercicios:ConversordeTemperatura, PlanificadordeCosecha, CazandoFantasmas, ContrasenaSegura, SimuladordeEnergia, VerificaciondeRango";
+            default:
+                return "no hay menu para ese dia";
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Que practico elegir ");
+        int numero = scanner.nextInt();
+        System.out.println("practico 3 tiene estos ejercicios: JerarquiadeAnimales, FigurasGeometricas, SistemadeEmpleados, VehiculosElectricos, GestordePagos, Bibliotecadigital, AnimalesdelZoologico " + numero);
+
+        Menu3 m = new Menu3();
+
+        System.out.println(m.obtenerMenu("3"));
+
+        scanner.close();
+    }
+}
